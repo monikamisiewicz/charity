@@ -25,7 +25,7 @@ public class HomeController {
 
     @GetMapping("/institutions")
     public String getList(Model model) {
-        model.addAttribute("institutions", institutionService.institutions());
+        model.addAttribute("institutions", institutionService.getInstitutions());
         return "institutions/list";
     }
 }

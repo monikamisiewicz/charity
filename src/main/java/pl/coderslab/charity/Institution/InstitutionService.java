@@ -13,7 +13,7 @@ public class InstitutionService {
 
     private final InstitutionRepository institutionRepository;
 
-    public List<Institution> institutions() {
+    public List<Institution> getInstitutions() {
         return institutionRepository.findAll();
     }
 

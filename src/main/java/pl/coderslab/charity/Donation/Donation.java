@@ -53,9 +53,7 @@ public class Donation {
     @Column(name = "zipCode")
     private String zipCode;
 
-
-    @OneToMany
-    @JoinColumn(name="id_person")
+    @ManyToMany
     private List<Category> categories = new ArrayList<>();
 
     @ManyToOne
