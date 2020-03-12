@@ -16,20 +16,20 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-
 public class HomeController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
     @RequestMapping("/")
-    public String homeAction(Model model){
+    public String homeAction(Model model) {
         return "index";
     }
 
     @ModelAttribute("institutions")
-    public List<Institution> getAllInstitutions()
-    {     return institutionService.getInstitutions();    }
+    public List<Institution> getAllInstitutions() {
+        return institutionService.getInstitutions();
+    }
 
     @ModelAttribute("countBags")
     public Long countAllBags() {
@@ -40,6 +40,5 @@ public class HomeController {
     public Long countAllDonations() {
         return donationService.countAllDonations();
     }
-
 
 }
