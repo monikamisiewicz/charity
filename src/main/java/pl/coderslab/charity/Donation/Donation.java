@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.Category.Category;
 import pl.coderslab.charity.Institution.Institution;
 
@@ -35,11 +36,18 @@ public class Donation {
     private String street;
 
     @Column(name = "city")
-    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     private String city;
+
+    @Column(name = "zipCode")
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
+    private String zipCode;
+
+    @Column(name = "phone")
+    private String phone;
 
     @NotNull
     @Future
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "pickUpDate")
     private LocalDate pickUpDate;
 
@@ -49,9 +57,6 @@ public class Donation {
 
     @Column(name = "pickUpComment")
     private String Comment;
-
-    @Column(name = "zipCode")
-    private String zipCode;
 
     @ManyToMany
     private List<Category> categories = new ArrayList<>();
