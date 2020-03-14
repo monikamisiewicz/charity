@@ -12,6 +12,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -29,19 +30,27 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Column(name = "quantity")
     private Integer quantity;
 
+    @NotNull
+    @Size(min = 3, message = "podaj min 3 znaki")
     @Column(name = "street")
     private String street;
 
+    @NotNull
+    @Size(min = 3, message = "podaj min 3 znaki")
     @Column(name = "city")
     private String city;
 
+    @NotNull(message = "format xx-xxx")
     @Column(name = "zipCode")
     @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     private String zipCode;
 
+    @NotNull
+    @Size(min = 9, max = 9, message = "numer telefonu musi składać się 9 cyfr")
     @Column(name = "phone")
     private String phone;
 
@@ -58,9 +67,11 @@ public class Donation {
     @Column(name = "pickUpComment")
     private String Comment;
 
+    @NotNull
     @ManyToMany
     private List<Category> categories = new ArrayList<>();
 
+    @NotNull
     @ManyToOne
     private Institution institution;
 

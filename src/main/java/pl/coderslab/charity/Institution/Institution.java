@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -20,10 +21,16 @@ public class Institution {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotNull(message = "pole nie może być puste")
     @Column(name = "name")
     private String name;
 
+    @NotNull
     @Column(name = "description")
     private String description;
+
+    @Override
+    public String toString() {
+        return "name";
+    }
 }

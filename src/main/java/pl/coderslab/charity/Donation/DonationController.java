@@ -35,7 +35,8 @@ public class DonationController {
             return "form";
         }
         donationRepository.save(donation);
-        return "redirect:/form-confirmation";
+//        return "redirect:/save-donation";
+        return "form-confirmation";
     }
 
     @ModelAttribute("institutions")
