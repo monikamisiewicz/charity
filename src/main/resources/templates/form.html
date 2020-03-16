@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <div th:insert="fragment :: head"></div>
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
-        <ul class="nav--actions">
+        <ul class="nav--actions" sec:authorize="isAuthenticated()">
             <li class="logged-user">
-                Witaj Agata
+        Witaj <span sec:authentication="name"></span>
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
@@ -16,11 +16,12 @@
         </ul>
 
         <ul>
-            <li><a href="index.html" class="btn btn--without-border active">Start</a></li>
-            <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="/" th:href="@{/home}" class="btn btn--without-border active">Start</a></li>
+            <li><a th:href="@{/#steps}" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a th:href="@{/#about-us}" class="btn btn--without-border">O nas</a></li>
+            <li><a th:href="@{/#help}" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="form.html" th:href="@{/add-donation}" class="btn btn--without-border">Przekaż dary</a></li>
+            <li><a th:href="@{/#contact}" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
 
@@ -80,7 +81,7 @@
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
-                <span th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></span>
+                <span class="error-msg" th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></span>
                 <div class="form-group form-group--checkbox" th:each="category: ${categories}">
                     <label>
                         <input name="*{categories}" value="${category.id}" type="checkbox" id="categoryInput"/>
@@ -99,13 +100,13 @@
             <!-- STEP 2 -->
             <div data-step="2">
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
-                <span th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span>
 
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
                         <input type="number" name="bags" step="1" min="1" th:field="*{quantity}" id="quantityInput"/>
                     </label>
+                    <span class="error-msg" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span>
                 </div>
 
                 <div class="form-group form-group--buttons">
@@ -118,7 +119,7 @@
             <!-- STEP 3 -->
             <div data-step="3">
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
-                <span th:if="${#fields.hasErrors('institution')}" th:errors="*{institution}"></span>
+                <span class="error-msg" th:if="${#fields.hasErrors('institution')}" th:errors="*{institution}"></span>
 
                 <div class="form-group form-group--checkbox" th:each="institution: ${institutions}">
                     <label>
@@ -148,27 +149,27 @@
                         <div class="form-group form-group--inline">
                             <label for="streetInput">Ulica</label>
                             <input type="text" th:field="*{street}" id="streetInput" name="street">
-                            <span th:if="${#fields.hasErrors('street')}" th:errors="*{street}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('street')}" th:errors="*{street}"></span>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label for="cityInput">Miasto</label>
                             <input type="text" th:field="*{city}" id="cityInput" name="city">
-                            <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
                         </div>
 
 
                         <div class="form-group form-group--inline">
                             <label for="zipcodeInput">Kod pocztowy</label>
                             <input type="text" th:field="*{zipCode}" id="zipcodeInput" name="zipcode" placeholder="xx-xxx"/>
-                            <span th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}"></span>
                         </div>
 
 
                         <div class="form-group form-group--inline">
                             <label for="phoneInput">Numer telefonu</label>
                             <input type="text" th:field="*{phone}" id="phoneInput" name="phone"/>
-                            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
                         </div>
 
                     </div>
@@ -178,14 +179,14 @@
                         <div class="form-group form-group--inline">
                             <label for="dateInput">Data</label>
                             <input type="date" th:field="*{pickUpDate}" id="dateInput" name="date" placeholder="yyyy-MM-dd"/>
-                            <span th:if="${#fields.hasErrors('pickUpDate')}" th:errors="*{pickUpDate}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('pickUpDate')}" th:errors="*{pickUpDate}"></span>
                         </div>
 
 
                         <div class="form-group form-group--inline">
                             <label for="timeInput">Godzina</label>
                             <input type="time" th:field="*{pickUpTime}" id="timeInput" name="time" placeholder="hh:mm"/>
-                            <span th:if="${#fields.hasErrors('pickUpTime')}" th:errors="*{pickUpTime}"></span>
+                            <span class="error-msg" th:if="${#fields.hasErrors('pickUpTime')}" th:errors="*{pickUpTime}"></span>
                         </div>
 
 

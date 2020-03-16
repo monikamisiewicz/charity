@@ -30,48 +30,48 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "*podaj ilość worków")
     @Column(name = "quantity")
     private Integer quantity;
 
     @NotNull
-    @Size(min = 3, message = "podaj min 3 znaki")
+    @Size(min = 3, message = "*podaj min 3 znaki")
     @Column(name = "street")
     private String street;
 
     @NotNull
-    @Size(min = 3, message = "podaj min 3 znaki")
+    @Size(min = 3, message = "*podaj min 3 znaki")
     @Column(name = "city")
     private String city;
 
     @NotNull(message = "format xx-xxx")
     @Column(name = "zipCode")
-    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}", message = "*podaj kod w formacie xx-xxx")
     private String zipCode;
 
-    @NotNull
-    @Size(min = 9, max = 9, message = "numer telefonu musi składać się 9 cyfr")
+    @NotNull(message = "*podaj numer telefonu")
+    @Size(min = 9, max = 9, message = "*numer telefonu musi składać się 9 cyfr")
     @Column(name = "phone")
     private String phone;
 
-    @NotNull
-    @Future
+    @NotNull(message = "*podaj datę odbioru")
+    @Future(message = "*data musi być w przyszłości")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "pickUpDate")
     private LocalDate pickUpDate;
 
-    @NotNull
+    @NotNull(message = "*podaj godzinę odbioru")
     @Column(name = "pickUpTime")
     private LocalTime pickUpTime;
 
     @Column(name = "pickUpComment")
     private String Comment;
 
-    @NotNull
+    @NotNull(message = "*wybierz kategorie")
     @ManyToMany
     private List<Category> categories = new ArrayList<>();
 
-    @NotNull
+    @NotNull(message = "*wybierz instytucję")
     @ManyToOne
     private Institution institution;
 

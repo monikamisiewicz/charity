@@ -25,5 +25,11 @@ INSERT INTO donation_categories (donation_id, categories_id) VALUES (4,1);
 INSERT INTO donation_categories (donation_id, categories_id) VALUES (4,5);
 
 INSERT INTO roles (id, role) VALUES (1, 'ADMIN');
-INSERT INTO roles (id, role) VALUES (2, 'ROLE_USER');
+INSERT INTO roles (id, role) VALUES (2, 'USER');
+
+INSERT INTO users (id, active, email, first_name, last_name, password, user_name) VALUES (1,1,'monika@o2.pl','Monika', 'Misiewicz', '$2a$10$aBTzh.Dmn.OSg99rMOs3gOTAexrldNpp2XEdt0XkovJn0t.QIT8nu', 'user1');
+INSERT INTO users (id, active, email, first_name, last_name, password, user_name) VALUES (2,1,'steve@gmail.com','Steve', 'Jobs', '$2a$10$G4a97XDJv/FQBPTvhO2vbOCPwPcV0Oz3DyxY5tT0fD33Jvz3GRz4u', 'admin1');
+
+INSERT INTO user_role (user_id, role_id) VALUES (1,2);
+INSERT INTO user_role (user_id, role_id) VALUES (2,1);
 

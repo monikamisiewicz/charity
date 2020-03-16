@@ -21,7 +21,7 @@ public class Institution {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "pole nie może być puste")
+    @NotNull(message = "*Pole nie może być puste")
     @Column(name = "name")
     private String name;
 
