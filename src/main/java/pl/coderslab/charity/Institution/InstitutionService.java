@@ -16,4 +16,20 @@ public class InstitutionService {
         return institutionRepository.findAll();
     }
 
+    public void save(Institution institution) {
+        institutionRepository.save(institution);
+    }
+
+    public Institution findById(long id) {
+        return institutionRepository.findById(id).get();
+    }
+
+    public void deleteById(long id) {
+        institutionRepository.deleteById(id);
+    }
+
+    public List<Institution> findByName(String name) {
+        return institutionRepository.findByNameStartsWith(name);
+    }
+
 }

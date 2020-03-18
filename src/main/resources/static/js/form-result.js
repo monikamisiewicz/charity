@@ -1,7 +1,9 @@
 function results() {
-    let categoryInput = document.querySelectorAll("input[name='categoryInput']:checked").value;
+    let categories = document.querySelectorAll("input[type=checkbox]:checked");
+    console.log("categories", categories);
+
     let quantityInput = document.getElementById('quantityInput').value;
-    let institutionInput = document.querySelector("input[name='institutionInput']:checked").value;
+    let institutionInput = document.querySelector("input[type=radio]:checked").parentElement.children[2].children[0].innerText;
     let streetInput = document.getElementById('streetInput').value;
     let cityInput = document.getElementById('cityInput').value;
     let zipcodeInput = document.getElementById('zipcodeInput').value;
@@ -21,19 +23,22 @@ function results() {
 
     let btnNextStep = document.querySelectorAll("btn next-step");
 
-    btnNextStep.forEach(function (value) {
-        value.addEventListener("click", function() {
+    let cats = Array.from(categories).forEach(function (cat) {
+        let catParent = cat.parentElement;
+        let children = catParent.children[2];
+        let childrenText = " " + children.innerText +" \n";
+        category.innerText = childrenText;
+        console.log("childrentext", childrenText);
+    });
 
-            category.innerText = 'Ilość worków: ' + categoryInput;
-            quantity.innerText = ' Przekazujesz: ' + quantityInput;
-            institution.innerText = institutionInput;
-            street.innerText = streetInput;
-            city.innerText = cityInput;
-            zipcode.innerText = zipcodeInput;
-            phone.innerText = phoneInput;
-            date.innerText = dateInput;
-            time.innerText = timeInput;
 
-        })
-    })
+    quantity.innerText = quantityInput + " - ";
+    institution.innerText = institutionInput;
+    street.innerText = streetInput;
+    city.innerText = cityInput;
+    zipcode.innerText = zipcodeInput;
+    phone.innerText = phoneInput;
+    date.innerText = dateInput;
+    time.innerText = timeInput;
+
 }

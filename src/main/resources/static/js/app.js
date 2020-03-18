@@ -126,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener("click", e => {
           e.preventDefault();
           this.currentStep++;
+          if(this.currentStep===5) {
+            results();
+          }
           this.updateForm();
         });
       });

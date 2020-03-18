@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.Donation.DonationService;
 import pl.coderslab.charity.Institution.Institution;
-import pl.coderslab.charity.Institution.InstitutionRepository;
 import pl.coderslab.charity.Institution.InstitutionService;
 
 import java.util.List;
