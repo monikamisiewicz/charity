@@ -29,7 +29,7 @@ public class InstitutionService {
     }
 
     public List<Institution> findByName(String name) {
-        return institutionRepository.findByNameStartsWith(name);
+        return institutionRepository.findByNameContaining(name);
     }
 
 }

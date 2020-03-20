@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div th:insert="fragment-admin :: head"></div>
+
+<body class="bg-gradient-primary">
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Edytuj fundację!</h1>
+                        </div>
+                        <form class="user" th:action="@{/admin/institutions/edit}" th:object="${institution}" method="post">
+                            <input type="hidden" th:field="*{id}">
+
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="name"></label>
+                                    <input type="text" class="form-control form-control-user" id="name"
+                                           placeholder="Nazwa" th:field="*{name}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                                <div class="col-sm-6">
+                                    <label for="description"></label>
+                                    <input type="text" class="form-control form-control-user" id="description"
+                                           placeholder="Opis" th:field="*{description}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                            </div>
+
+                            <button class="btn btn-primary btn-user btn-block" type="submit">Zapisz</button>
+                            <hr>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{../../vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Core plugin JavaScript-->
+<script th:src="@{../../vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+<!-- Custom scripts for all pages-->
+<script th:src="@{../../js/admin/sb-admin-2.min.js}"></script>
+
+</body>
+
+</html>

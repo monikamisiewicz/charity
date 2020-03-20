@@ -68,7 +68,7 @@ public class InstitutionController {
     }
 
     @GetMapping("/name")
-    public String getByNameStart(@RequestParam("name") String name, Model model) {
+    public String getByNameContaining(@RequestParam("name") String name, Model model) {
         model.addAttribute("institutions", institutionService.findByName(name));
         return "admin/institutions/list";
     }

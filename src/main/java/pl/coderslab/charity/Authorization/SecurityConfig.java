@@ -42,31 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(bCryptPasswordEncoder());
     }
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//
-//        String loginPage = "/login";
-//        String logoutPage = "/logout";
-//
-//        http.
-//                authorizeRequests()
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .antMatchers("/registration").permitAll()
-//                .antMatchers("/home").hasRole("USER")
-//                .antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
-//                .authenticated().and().csrf().disable().formLogin()
-//                .loginPage("/login").failureUrl("/login?error=true")
-////                .defaultSuccessUrl("/home")
-//                .defaultSuccessUrl("/admin/home")
-//                .usernameParameter("user_name")
-//                .passwordParameter("password")
-//                .and().logout()
-//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//                .logoutSuccessUrl("/login").and().exceptionHandling()
-//                .accessDeniedPage("/access-denied");
-//    }
-
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
 
@@ -90,10 +65,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
-//                .defaultSuccessUrl("/home")
-
-//                .defaultSuccessUrl("/admin/home")
-
 
                 .and()
                 .logout()

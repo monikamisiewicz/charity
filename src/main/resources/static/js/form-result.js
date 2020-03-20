@@ -23,16 +23,16 @@ function results() {
 
     let btnNextStep = document.querySelectorAll("btn next-step");
 
-    let cats = Array.from(categories).forEach(function (cat) {
-        let catParent = cat.parentElement;
-        let children = catParent.children[2];
-        let childrenText = " " + children.innerText +" \n";
-        category.innerText = childrenText;
-        console.log("childrentext", childrenText);
-    });
+    // let cats = Array.from(categories).forEach(function (cat) {
+    //     let catParent = cat.parentElement;
+    //     let children = catParent.children[2];
+    //     let childrenText = " " + children.innerText +" \n";
+    //     category.innerText = childrenText;
+    //     console.log("childrentext", childrenText);
+    // });
 
 
-    quantity.innerText = quantityInput + " - ";
+    quantity.innerText = quantityInput;
     institution.innerText = institutionInput;
     street.innerText = streetInput;
     city.innerText = cityInput;

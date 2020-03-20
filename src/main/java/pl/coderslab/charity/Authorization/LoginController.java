@@ -53,7 +53,8 @@ public class LoginController {
         User user = userService.findUserByUserName(auth.getName());
         model.addAttribute("userName", "Witaj " + user.getFirstName());
         model.addAttribute("adminMessage", "Ta zawartość dostępna jest tylko dla Administratora");
-        return"/admin/home";
+        model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
+        return "admin/index";
 
     }
 }
