@@ -11,10 +11,10 @@ INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_tim
 INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (3,'Brak uwag','Wrocław', '987654321', '2020/03/20', '17:00:00', 2, 'Przejazdowa 55/5', '73-230', 3);
 INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (4,'Brak uwag','Wrocław', '503456789', '2020/03/23', '15:30:00', 4, 'Zielona 17', '70-830', 4);
 
-INSERT INTO institution (id, name, description) VALUES (1, '"Dbam o Zdrowie"', 'Cel i misja: Pomoc dzieciom z ubogich rodzin.');
-INSERT INTO institution (id, name, description) VALUES (2, '"A kogo"', 'Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.');
-INSERT INTO institution (id, name, description) VALUES (3, '“Dla dzieci"', 'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.');
-INSERT INTO institution (id, name, description) VALUES (4, '“Bez domu”', 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania');
+INSERT INTO institution (id, name, description) VALUES (1, '"Dbam o Zdrowie"', 'Pomoc dzieciom z ubogich rodzin.');
+INSERT INTO institution (id, name, description) VALUES (2, '"A kogo"', 'Pomoc wybudzaniu dzieci ze śpiączki.');
+INSERT INTO institution (id, name, description) VALUES (3, '“Dla dzieci"', 'Pomoc osobom znajdującym się w trudnej sytuacji życiowej.');
+INSERT INTO institution (id, name, description) VALUES (4, '“Bez domu”', 'Pomoc dla osób nie posiadających miejsca zamieszkania');
 
 INSERT INTO donation_categories (donation_id, categories_id) VALUES (1,2);
 INSERT INTO donation_categories (donation_id, categories_id) VALUES (1,1);

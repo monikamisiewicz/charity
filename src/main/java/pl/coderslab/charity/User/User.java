@@ -1,12 +1,14 @@
-package pl.coderslab.charity.Authorization;
+package pl.coderslab.charity.User;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
+import pl.coderslab.charity.Role.Role;
 
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 
@@ -37,7 +39,7 @@ public class User {
 
     @Column(name = "password")
     @Length(min = 5, message = "*Hasło musi zawierać co najmniej 5 znaków")
-    @NotEmpty(message = "*Podaj hasło")
+    @NotNull(message = "*Podaj hasło")
     private String password;
 
     @Column(name = "user_name", unique = true, length = 60)

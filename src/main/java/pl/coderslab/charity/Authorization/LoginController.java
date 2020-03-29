@@ -7,13 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.charity.Donation.DonationService;
+import pl.coderslab.charity.Institution.Institution;
+import pl.coderslab.charity.Institution.InstitutionService;
+import pl.coderslab.charity.User.User;
+import pl.coderslab.charity.User.UserService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
 
+    private final InstitutionService institutionService;
+    private final DonationService donationService;
     private final UserService userService;
 
     @GetMapping("/registration")
@@ -55,6 +63,21 @@ public class LoginController {
         model.addAttribute("adminMessage", "Ta zawartość dostępna jest tylko dla Administratora");
         model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
         return "admin/index";
-
     }
+
+    @ModelAttribute("institutions")
+    public List<Institution> getAllInstitutions() {
+        return institutionService.getInstitutions();
+    }
+
+    @ModelAttribute("countBags")
+    public Long countAllBags() {
+        return donationService.countTotalBags();
+    }
+
+    @ModelAttribute("countDonations")
+    public Long countAllDonations() {
+        return donationService.countAllDonations();
+    }
+
 }

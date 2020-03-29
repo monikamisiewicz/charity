@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div th:insert="fragment-admin :: head"></div>
+
+<body class="bg-gradient-primary">
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Edytuj administratora!</h1>
+                        </div>
+                        <form class="user" th:action="@{/admin/admins/edit}" th:object="${admin}" method="post">
+                            <input type="hidden" th:field="*{id}">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="firstName"></label>
+                                    <input type="text" class="form-control form-control-user" id="firstName"
+                                           placeholder="Imię" th:field="*{firstName}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="lastName"></label>
+                                    <input type="text" class="form-control form-control-user" id="lastName"
+                                           placeholder="Nazwisko" th:field="*{lastName}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                                <div class="col-sm-6">
+                                    <label for="email"></label>
+                                    <input type="email" class="form-control form-control-user" id="email"
+                                           placeholder="twójEmail@przykład.com" th:field="*{email}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="userName"></label>
+                                    <input type="text" class="form-control form-control-user" id="userName"
+                                           placeholder="Nazwa użytkownika" th:field="*{userName}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+                                <div class="col-sm-6 offset-3">
+                                    <label for="password"></label>
+                                    <input type="password" class="form-control form-control-user" id="password"
+                                           placeholder="hasło" th:field="*{password}">
+                                </div>
+                                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                            </div>
+
+                            <button class="btn btn-primary btn-user btn-block" type="submit">Zapisz</button>
+                            <hr>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{../../vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Core plugin JavaScript-->
+<script th:src="@{../../vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+<!-- Custom scripts for all pages-->
+<script th:src="@{../../js/admin/sb-admin-2.min.js}"></script>
+
+</body>
+
+</html>

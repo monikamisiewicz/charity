@@ -1,4 +1,4 @@
-package pl.coderslab.charity.Authorization;
+package pl.coderslab.charity.Role;
 
 import lombok.*;
 

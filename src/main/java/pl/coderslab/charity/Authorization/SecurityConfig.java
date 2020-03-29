@@ -1,6 +1,5 @@
 package pl.coderslab.charity.Authorization;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import pl.coderslab.charity.Authorization.MySimpleUrlAuthenticationSuccessHandler;
-import pl.coderslab.charity.Authorization.MyUserDetailsService;
+import pl.coderslab.charity.User.MyUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

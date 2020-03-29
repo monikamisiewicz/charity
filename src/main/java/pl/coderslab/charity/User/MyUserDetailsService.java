@@ -1,4 +1,4 @@
-package pl.coderslab.charity.Authorization;
+package pl.coderslab.charity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import pl.coderslab.charity.Role.Role;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;

@@ -41,9 +41,9 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-            <a class="nav-link" href="/" th:href="@{/admin/institutions/list}">
+            <a class="nav-link" href="/" th:href="@{/admin/users/list}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Lista fundacji</span></a>
+                <span>Lista użytkowników</span></a>
         </li>
 
         <!-- Divider -->
@@ -72,9 +72,9 @@
                 </button>
 
                 <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" th:action="@{/admin/institutions/name}" method="get">
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" th:action="@{/admin/users/username}" method="get">
                     <div class="input-group">
-                        <input type="search" class="form-control bg-light border-0 small" placeholder="Szukaj fundacji..." aria-label="Search" aria-describedby="basic-addon2" name="name">
+                        <input type="search" class="form-control bg-light border-0 small" placeholder="Szukaj użytkownika..." aria-label="Search" aria-describedby="basic-addon2" name="userName">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">
                                 <i class="fas fa-search fa-sm"></i>
@@ -82,11 +82,6 @@
                         </div>
                     </div>
                 </form>
-
-                <button class="btn btn-primary btn-icon-split">
-                    <a href="/admin/institutions" th:href="@{/admin/institutions}" class="btn btn--without-border">Nowa instytucja</a>
-                </button>
-
 
                 <ul th:insert="fragment-admin :: topbar-navbar"></ul>
 
@@ -96,40 +91,48 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Fundacje</h1>
-                <p class="mb-4">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
-                    Możesz sprawdzić czym się zajmują.</p>
-
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista fundacji</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Lista użytkowników</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Nazwa</th>
-                                    <th>Cel i misja</th>
+                                    <th>Nazwa użytkownika</th>
+                                    <th>Email</th>
+                                    <th>Imię</th>
+                                    <th>Nazwisko</th>
+                                    <th>Status użytkownika</th>
                                     <th colspan="2">Akcje</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Nazwa</th>
-                                    <th>Cel i misja</th>
+                                    <th>Nazwa użytkownika</th>
+                                    <th>Email</th>
+                                    <th>Imię</th>
+                                    <th>Nazwisko</th>
+                                    <th>Status użytkownika</th>
                                     <th colspan="2">Akcje</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                <tr th:each="institution : ${institutions}">
-                                    <th th:text="${institution.name}"></th>
-                                    <td th:text="${institution.description}"></td>
+                                <tr th:each="user : ${users}">
+                                    <th th:text="${user.userName}"></th>
+                                    <td th:text="${user.email}"></td>
+                                    <td th:text="${user.firstName}"></td>
+                                    <td th:text="${user.lastName}"></td>
+                                    <td>
+                                    <span class="text-success" th:if="${user.active}">Aktywny</span>
+                                    <span class="text-danger" th:unless="${user.active}">Zablokowany</span>
+                                    </td>
                                     <th>
-                                        <a class="fas fa-edit" th:href="@{edit/{id}(id=${institution.id})}"></a>
-                                        <a class="fas fa-trash-alt" th:href="@{delete/{id}(id=${institution.id})}"></a>
+                                        <a class="fas fa-edit" th:href="@{edit/{id}(id=${user.id})}"></a>
+                                        <a class="fas fa-trash-alt validation-message" th:href="@{delete/{id}(id=${user.id})}"></a>
+
                                     </th>
                                 </tr>
                                 </tbody>
@@ -137,6 +140,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- /.container-fluid -->
 

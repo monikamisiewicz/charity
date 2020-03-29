@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.Donation.DonationService;
 import pl.coderslab.charity.Institution.Institution;
 import pl.coderslab.charity.Institution.InstitutionService;
+import pl.coderslab.charity.User.User;
+import pl.coderslab.charity.User.UserService;
 
 import java.util.List;
 
@@ -19,6 +21,7 @@ public class HomeController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
+    private final UserService userService;
 
     @RequestMapping("/home")
     public String homeAction(Model model) {

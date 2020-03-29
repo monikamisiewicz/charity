@@ -6,11 +6,12 @@
     <nav class="container container--70">
         <ul class="nav--actions">
             <li><a href="login.html" th:href="@{/login}" class="btn btn--small btn--highlighted">Zaloguj</a></li>
-            <li><a href="registration.html" th:href="@{/registration}" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href="registration.html" th:href="@{/registration}" class="btn btn--small btn--highlighted">Załóż
+                konto</a></li>
         </ul>
 
         <ul>
-            <li><a href="/" th:href="@{/}" class="btn btn--without-border active">Start</a></li>
+            <li><a th:href="@{#stats}" class="btn btn--without-border active">Start</a></li>
             <li><a th:href="@{#steps}" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a th:href="@{#about-us}" class="btn btn--without-border">O nas</a></li>
             <li><a th:href="@{#help}" class="btn btn--without-border">Fundacje i organizacje</a></li>
@@ -33,13 +34,15 @@
     <form th:action="@{/login}" method="POST">
         <div class="form-group">
             <label>
-                <input type="text" name="user_name" placeholder="nazwa użytkownika" id="userName" />
+                <input class="form-control" type="text" name="user_name" placeholder="nazwa użytkownika" id="userName"/>
             </label>
         </div>
         <div class="form-group">
             <label>
-                <input type="password" name="password" th:placeholder="Hasło" id="password" autofocus="autofocus" />
+                <input class="form-control" type="password" name="password" th:placeholder="Hasło" id="password"/>
             </label>
+        </div>
+        <div class="form-group">
             <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
 
@@ -47,7 +50,7 @@
             Nazwa użytkownika lub hasło nieprawidłowe
         </div>
         <div class="text--center" th:if="${param.logout}">
-           Zostałeś prawidłowo wylogowany
+            Zostałeś prawidłowo wylogowany
         </div>
 
         <div class="form-group form-group--buttons">
@@ -57,6 +60,11 @@
 
     </form>
 </section>
+
+<section th:insert="fragment :: stats"></section>
+<section th:insert="fragment :: steps"></section>
+<section th:insert="fragment :: about-us"></section>
+<section th:insert="fragment :: help"></section>
 
 <div th:insert="fragment :: footer"></div>
 <script th:src="@{/js/app.js}"></script>
