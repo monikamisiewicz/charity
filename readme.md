@@ -17,6 +17,9 @@
 
 - Sense of tangible aid
 
+##### Technologies used:
+Java, Spring boot, Spring Security, Hibernate, MySQL, Thymeleaf, HTML, CSS, Bootstrap
+
 # "ODDAM W DOBRE RĘCE"
 
 ### Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.
@@ -34,6 +37,9 @@
 - Samodzielna organizacji zbiórki lokalnej.
 
 - Poczucie realnej pomocy.
+
+##### Użyte technologie:
+Java, Spring boot, Spring Security, Hibernate, MySQL, Thymeleaf, HTML, CSS, Bootstrap
 
 ![picture](src/main/resources/static/screenshots/homepage.png)
 ![picture](src/main/resources/static/screenshots/addDonation.png)
