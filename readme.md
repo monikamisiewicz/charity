@@ -19,6 +19,8 @@ Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać n
 
 
 
+
+
 **"IN GOOD HANDS"**
 
 The purpose of this project is to create a space, where everyone could give away unnecessary things to trusted institutions.
