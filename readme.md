@@ -1,12 +1,39 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+
+"Oddam w dobre ręce"
+
+Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.
+
+✓Gotowa lista sprawdzonych miejsc, którym można pomóc.
+
+✓Zamówienie kuriera do domu, który zabiera rzeczy pod wskazany adres.
+
+✓Prosta instrukcja pakowania rzeczy.
+
+✓ Nie tylko ubrania, ale też zabawki i książki.
+
+✓ Pozbycie się rzeczy do wyrzucenia.
+
+✓ Samodzielna organizacji zbiórki lokalnej.
+
+✓ Poczucie realnej pomocy.
 
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+"In good hands"
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+The purpose of this project is to create a space, where everyone could give away unnecessary things to trusted institutions.
+
+✓A ready list of verified places you can help
+
+✓ Request a courier pick-up and have your package delivered to the address indicated
+
+✓Easy packing instruction
+
+✓Not only clothing, but also books, toys and more
+
+✓Get rid of things you don't need any more
+
+✓Self-organization of local collection
+
+✓Sense of tangible aid
+

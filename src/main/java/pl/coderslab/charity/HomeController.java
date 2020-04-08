@@ -19,9 +19,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HomeController {
 
+    private final UserService userService;
     private final InstitutionService institutionService;
     private final DonationService donationService;
-    private final UserService userService;
 
     @RequestMapping("/home")
     public String homeAction(Model model) {

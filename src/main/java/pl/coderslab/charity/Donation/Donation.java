@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.Category.Category;
+import pl.coderslab.charity.DonationStatus.Status;
 import pl.coderslab.charity.Institution.Institution;
+import pl.coderslab.charity.User.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.Future;
@@ -74,5 +76,15 @@ public class Donation {
     @NotNull(message = "*wybierz instytucję")
     @ManyToOne
     private Institution institution;
+
+    @NotNull(message = "*wybierz status")
+    @ManyToOne
+    private Status status;
+
+    @ManyToOne
+    private User user;
+
+
+
 
 }

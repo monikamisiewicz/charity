@@ -32,4 +32,8 @@ public class InstitutionService {
         return institutionRepository.findByNameContaining(name);
     }
 
+    public long countAllInstitutions() {
+        return institutionRepository.count();
+    }
+
 }

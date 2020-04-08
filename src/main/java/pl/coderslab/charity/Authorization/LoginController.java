@@ -80,4 +80,14 @@ public class LoginController {
         return donationService.countAllDonations();
     }
 
+    @ModelAttribute("countUsers")
+    public Long countAllUsers() {
+        return userService.countAllUsers();
+    }
+
+    @ModelAttribute("countInstitutions")
+    public Long countAllInstitutions() {
+        return institutionService.countAllInstitutions();
+    }
+
 }

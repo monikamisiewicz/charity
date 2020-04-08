@@ -6,10 +6,12 @@ INSERT INTO category(id, name) VALUES (4, 'Książki');
 INSERT INTO category(id, name) VALUES (5, 'Zabawki');
 INSERT INTO category(id, name) VALUES (6, 'Inne');
 
-INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (1,'Brak uwag','Wrocław', '123456789', '2020/03/15', '12:00:00', 3, 'Kornela Makuszyńskiego 2', '72-530', 1);
-INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (2,'Brak uwag','Wrocław', '605456789', '2020/03/17', '08:30:00', 1, 'Wiśniowa 5/12', '71-470', 2);
-INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (3,'Brak uwag','Wrocław', '987654321', '2020/03/20', '17:00:00', 2, 'Przejazdowa 55/5', '73-230', 3);
-INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (4,'Brak uwag','Wrocław', '503456789', '2020/03/23', '15:30:00', 4, 'Zielona 17', '70-830', 4);
+
+INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id, status_id, user_id) VALUES (1, 'Brak uwag','Wrocław', '123456789', '2020/03/15', '12:00:00', 3, 'Kornela Makuszyńskiego 2', '72-530', 1, 1,1);
+INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id, status_id, user_id) VALUES (2,'Brak uwag','Wrocław', '605456789', '2020/03/17', '08:30:00', 1, 'Wiśniowa 5/12', '71-470', 2, 2,1);
+INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id, status_id, user_id) VALUES (3,'Brak uwag','Wrocław', '987654321', '2020/03/20', '17:00:00', 2, 'Przejazdowa 55/5', '73-230', 3, 3,1);
+INSERT INTO donation(id, pick_up_comment, city, phone, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id, status_id, user_id) VALUES (4,'Brak uwag','Wrocław', '503456789', '2020/03/23', '15:30:00', 4, 'Zielona 17', '70-830', 4, 1,1);
+
 
 INSERT INTO institution (id, name, description) VALUES (1, '"Dbam o Zdrowie"', 'Pomoc dzieciom z ubogich rodzin.');
 INSERT INTO institution (id, name, description) VALUES (2, '"A kogo"', 'Pomoc wybudzaniu dzieci ze śpiączki.');
@@ -32,4 +34,8 @@ INSERT INTO users (id, active, email, first_name, last_name, password, user_name
 
 INSERT INTO user_role (user_id, role_id) VALUES (1,2);
 INSERT INTO user_role (user_id, role_id) VALUES (2,1);
+
+INSERT into statuses (id, name) VALUES (1, 'Złożony');
+INSERT into statuses (id, name) VALUES (2, 'Odebrany');
+INSERT into statuses (id, name) VALUES (3, 'Przekazany');
 

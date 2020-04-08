@@ -81,4 +81,8 @@ public class UserService {
         return userRepository.save(admin);
     }
 
+    public long countAllUsers() {
+        return userRepository.count();
+    }
+
 }

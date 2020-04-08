@@ -4,6 +4,7 @@
 <body>
 <div th:insert="fragment :: header"></div>
 
+<h1 th:if="${passChanged!=null}" class="text-success">Hasło zostało zmienione.</h1>
 
 <section th:insert="fragment :: stats"></section>
 <section th:insert="fragment :: steps"></section>

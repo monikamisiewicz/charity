@@ -7,11 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.charity.Donation.DonationService;
+import pl.coderslab.charity.Institution.Institution;
+import pl.coderslab.charity.Institution.InstitutionService;
 import pl.coderslab.charity.Role.RoleRepository;
 import pl.coderslab.charity.User.User;
 import pl.coderslab.charity.User.UserService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("admin/admins")
@@ -19,6 +23,9 @@ import javax.validation.Valid;
 public class AdminController {
 
 private final UserService userService;
+private final DonationService donationService;
+private final InstitutionService institutionService;
+
 
     @GetMapping
     public String add(Model model) {
@@ -97,5 +104,21 @@ private final UserService userService;
         model.addAttribute("admins", userService.findByUserNameContaining(userName));
         return "admin/admins/list";
     }
+
+    @ModelAttribute("institutions")
+    public List<Institution> getAllInstitutions() {
+        return institutionService.getInstitutions();
+    }
+
+    @ModelAttribute("countBags")
+    public Long countAllBags() {
+        return donationService.countTotalBags();
+    }
+
+    @ModelAttribute("countDonations")
+    public Long countAllDonations() {
+        return donationService.countAllDonations();
+    }
+
 }
 
