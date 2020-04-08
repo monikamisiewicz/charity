@@ -1,9 +1,10 @@
 
-"Oddam w dobre ręce"
+"ODDAM W DOBRE RĘCE"
 
 Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.
 
 ✓Gotowa lista sprawdzonych miejsc, którym można pomóc.
+
 ✓Zamówienie kuriera do domu, który zabiera rzeczy pod wskazany adres.
 
 ✓Prosta instrukcja pakowania rzeczy.
@@ -18,7 +19,7 @@ Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać n
 
 
 
-"In good hands"
+"IN GOOD HANDS"
 
 The purpose of this project is to create a space, where everyone could give away unnecessary things to trusted institutions.
 
