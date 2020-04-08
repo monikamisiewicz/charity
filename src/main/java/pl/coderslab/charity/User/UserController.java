@@ -35,7 +35,6 @@ public class UserController {
             return "admin/users/edit";
         }
 
-//        user.setPassword(userService.findById(user.getId()).getPassword());
 
         if (user.getActive()) {
             userService.saveUser(user);
