@@ -1,39 +1,39 @@
 
-"ODDAM W DOBRE RĘCE"
+**"ODDAM W DOBRE RĘCE"**
 
 Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.
 
-✓Gotowa lista sprawdzonych miejsc, którym można pomóc.
+- Gotowa lista sprawdzonych miejsc, którym można pomóc.
 
-✓Zamówienie kuriera do domu, który zabiera rzeczy pod wskazany adres.
+- Zamówienie kuriera do domu, który zabiera rzeczy pod wskazany adres.
 
-✓Prosta instrukcja pakowania rzeczy.
+- Prosta instrukcja pakowania rzeczy.
 
-✓ Nie tylko ubrania, ale też zabawki i książki.
+- Nie tylko ubrania, ale też zabawki i książki.
 
-✓ Pozbycie się rzeczy do wyrzucenia.
+- Pozbycie się rzeczy do wyrzucenia.
 
-✓ Samodzielna organizacji zbiórki lokalnej.
+- Samodzielna organizacji zbiórki lokalnej.
 
-✓ Poczucie realnej pomocy.
+- Poczucie realnej pomocy.
 
 
 
-"IN GOOD HANDS"
+**"IN GOOD HANDS"**
 
 The purpose of this project is to create a space, where everyone could give away unnecessary things to trusted institutions.
 
-✓A ready list of verified places you can help
+- A ready list of verified places you can help
 
-✓ Request a courier pick-up and have your package delivered to the address indicated
+- Request a courier pick-up and have your package delivered to the address indicated
 
-✓Easy packing instruction
+- Easy packing instruction
 
-✓Not only clothing, but also books, toys and more
+- Not only clothing, but also books, toys and more
 
-✓Get rid of things you don't need any more
+- Get rid of things you don't need any more
 
-✓Self-organization of local collection
+- Self-organization of local collection
 
-✓Sense of tangible aid
+- Sense of tangible aid
 
