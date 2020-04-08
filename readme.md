@@ -35,8 +35,9 @@
 
 - Poczucie realnej pomocy.
 
-
-
+![picture](src/main/resources/static/screenshots/homepage.png)
+![picture](src/main/resources/static/screenshots/addDonation.png)
+![picture](src/main/resources/static/screenshots/adminPanel.png)
 
 
 
