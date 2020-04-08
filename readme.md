@@ -4,7 +4,6 @@
 Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.
 
 ✓Gotowa lista sprawdzonych miejsc, którym można pomóc.
-
 ✓Zamówienie kuriera do domu, który zabiera rzeczy pod wskazany adres.
 
 ✓Prosta instrukcja pakowania rzeczy.
